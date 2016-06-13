@@ -26,6 +26,8 @@
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
+    <engine name="ios" spec="~4.0.0" />
+    <engine name="android" spec="~5.1.0" />
     <plugin name="cordova-plugin-device" spec="~1.1.2" />
     <plugin name="cordova-plugin-console" spec="~1.0.3" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.2" />
@@ -33,6 +35,7 @@
     <plugin name="cordova-plugin-statusbar" spec="~2.1.3" />
     <plugin name="ionic-plugin-keyboard" spec="~2.2.0" />
     <plugin name="cordova-plugin-googlemaps" spec="https://github.com/phonegap-googlemaps-plugin/cordova-plugin-googlemaps">
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyBlEvVLjNRwDyd2vNECoBSsS6v_yEYc0m0" />
         <variable name="API_KEY_FOR_IOS" value="AIzaSyBlOXsfHGBOwzQyoVs-fkrjo9LC8K3GeI0" />
     </plugin>
 </widget>
