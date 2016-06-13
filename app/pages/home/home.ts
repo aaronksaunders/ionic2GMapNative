@@ -21,29 +21,30 @@ export class HomePage {
     this.map = new GoogleMap('map_canvas');
 
     GoogleMap.isAvailable().then(() => {
-      this.map.on(GoogleMapsEvent.MAP_READY).subscribe(
-        () => this.onMapReady(),
-        () => alert("Error: onMapReady")
-      );
+      // this.map.on(GoogleMapsEvent.MAP_READY).subscribe(
+      //   () => this.onMapReady(),
+      //   () => alert("Error: onMapReady")
+      // );
 
-      this.map.on(GoogleMapsEvent.MAP_READY).subscribe(
-        (data: any) => {
-          alert("GoogleMap.onMapReady(): ");
-        },
-        () => alert("Error: GoogleMapsEvent.MAP_READY")
-      );
+      // this.map.on(GoogleMapsEvent.MAP_READY).subscribe(
+      //   (data: any) => {
+      //     alert("GoogleMap.onMapReady(): ");
+      //   },
+      //   () => alert("Error: GoogleMapsEvent.MAP_READY")
+      // );
 
       this.map.one(GoogleMapsEvent.MAP_READY).then((data: any) => {
         alert("GoogleMap.onMapReady(): " + JSON.stringify(data));
+
+        let myPosition = new GoogleMapsLatLng('38.9072', '-77.0369');
+        console.log("My position is", myPosition);
+
+        this.map.animateCamera({ target: myPosition, zoom: 10 });
       });
     });
 
 
 
-    let myPosition = new GoogleMapsLatLng('38.9072', '-77.0369');
-    console.log("My position is", myPosition);
-
-    this.map.animateCamera({ target: myPosition, zoom: 10 });
 
   }
 
