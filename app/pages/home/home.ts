@@ -18,9 +18,11 @@ export class HomePage {
 
 
   private onPlatformReady(): void {
-    this.map = new GoogleMap('map_canvas');
 
     GoogleMap.isAvailable().then(() => {
+      
+      this.map = new GoogleMap('map_canvas');
+          
       // this.map.on(GoogleMapsEvent.MAP_READY).subscribe(
       //   () => this.onMapReady(),
       //   () => alert("Error: onMapReady")
